@@ -23,7 +23,7 @@
     <p id="message">Success! API call completed.</p>
     
     <script>
-        document.getElementById("apiButton").addEventListener("click", function() {
+        var srver_response = document.getElementById("apiButton").addEventListener("click", function() {
     fetch("http://localhost:3000/extract-Data-send-Mail", {
         method: "POST"
     })
@@ -41,6 +41,9 @@
         console.error("Error calling API:", error);
     });
 });
+
+    document.getElementById("message").innerHTML = response.json()
+    document.getElementById("message").style.display = "block";
     </script>
 </body>
 </html>
